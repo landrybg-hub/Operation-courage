@@ -1,144 +1,149 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Operation Courage</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;500;700&display=>
 
-;
-box-sizing:border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-font-family:Poppins,sans-serif;
-background:linear-gradient(135deg,#050505,#111,#1a1a1a);
-color:white;
-overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#0d0d0d;
+    color:white;
+    overflow:hidden;
 }
 
+/* Brouillard */
+
 body::before{
-content:"";
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 20%,rgba(255,140,0,0.15),transparent 35%),
-radial-gradient(circle at 80% 60%,rgba(255,0,0,0.12),transparent 35%);
-animation:fog 10s infinite alternate;
-pointer-events:none;
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 20% 30%, rgba(255,140,0,.15), transparent 35%),
+    radial-gradient(circle at 75% 60%, rgba(255,0,0,.12), transparent 35%);
+    animation:fog 12s infinite alternate ease-in-out;
+    pointer-events:none;
 }
 
 @keyframes fog{
-from{transform:scale(1);}
-to{transform:scale(1.15);}
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.15);
+    }
 }
 
 .page{
-display:none;
-height:100vh;
-padding:30px;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-animation:fade 1s;
+    display:none;
+    min-height:100vh;
+    width:100%;
+    padding:40px 25px;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+
+    animation:fade .8s ease;
 }
 
 .page.active{
-display:flex;
+    display:flex;
 }
 
 @keyframes fade{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 h1{
-font-family:Cinzel,serif;
-font-size:3.2rem;
-margin-bottom:25px;
-color:#f5d48f;
+    font-family:'Cinzel',serif;
+    font-size:3rem;
+    color:#f8d17d;
+    margin-bottom:25px;
 }
 
 h2{
-font-family:Cinzel,serif;
-font-size:2.4rem;
-margin-bottom:20px;
-color:#f5d48f;
+    font-family:'Cinzel',serif;
+    font-size:2.2rem;
+    color:#f8d17d;
+    margin-bottom:20px;
 }
 
 p{
-max-width:850px;
-line-height:1.8;
-font-size:1.15rem;
-}
-
-button{
-margin-top:15px;
-padding:15px 30px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-size:1rem;
-background:#9c1c1c;
-color:white;
-transition:0.3s;
-box-shadow:0 0 15px rgba(255,0,0,.3);
-}
-
-button:hover{
-transform:translateY(-4px);
-background:#c62828;
-box-shadow:0 0 25px rgba(255,0,0,.6);
-}
-
-.choice{
-display:block;
-min-width:350px;
-margin:12px auto;
+    max-width:850px;
+    line-height:1.8;
+    font-size:1.1rem;
 }
 
 .highlight{
-color:#f5d48f;
-font-weight:bold;
+    color:#f8d17d;
+    font-weight:bold;
 }
 
-.typewriter{
-border-right:3px solid #f5d48f;
-white-space:pre-wrap;
-overflow:hidden;
+button{
+    margin-top:15px;
+    border:none;
+    border-radius:12px;
+    padding:15px 30px;
+    font-size:1rem;
+    cursor:pointer;
+    background:#ad1d1d;
+    color:white;
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    background:#d63333;
+}
+
+.choice{
+    width:340px;
+    max-width:90%;
 }
 
 #result{
-margin-top:30px;
-color:#f5d48f;
-font-size:1.2rem;
-font-weight:bold;
+    margin-top:35px;
+    color:#f8d17d;
+    font-size:1.1rem;
+    font-weight:bold;
+}
+
+#intro{
+    max-width:700px;
+    white-space:pre-wrap;
+    border-right:2px solid #f8d17d;
 }
 
 </style>
-
 </head>
 
 <body>
+
+<!-- PAGE 1 -->
 
 <div class="page active" id="page1">
 
 <h1>31. Oktober 2026</h1>
 
-<p id="intro" class="typewriter"></p>
+<p id="intro"></p>
 
 <button onclick="nextPage(2)">
 ✅ Mut beweisen
@@ -150,24 +155,49 @@ font-weight:bold;
 
 </div>
 
+<!-- PAGE 2 -->
+
 <div class="page" id="page2">
 
-<h2>🔒 VERTRAULICHE AKTE</h2>
+<h2>🔒 Vertrauliche Akte</h2>
 
 <p>
-Projekt: <span class="highlight">Operation William wird endlich 30</span>
+
+Projektname:
+
 <br><br>
+
+<span class="highlight">
+Operation: William feiert endlich seinen 30. Geburtstag
+</span>
+
+<br><br>
+
 Spaßfaktor: Sehr hoch
+
 <br>
+
 Pizzafaktor: Exzellent
+
 <br>
-Risiko etwas zu verpassen:
+
+Gute-Laune-Potenzial: Maximum
+
+<br>
+
+Risiko, etwas zu verpassen:
+
 <span class="highlight">97,4 %</span>
+
 </p>
 
-<button onclick="nextPage(3)">Mehr erfahren</button>
+<button onclick="nextPage(3)">
+Mehr erfahren
+</button>
 
 </div>
+
+<!-- PAGE 3 -->
 
 <div class="page" id="page3">
 
@@ -175,7 +205,7 @@ Risiko etwas zu verpassen:
 
 <p>
 
-Nach mehreren Wochen Analyse, Erinnerungen und Diskussionen mit einer sehr seriösen Kommission wurde Folgendes festgestellt:
+Nach mehreren Wochen Analyse und einigen sehr positiven Erinnerungen wurde festgestellt:
 
 <br><br>
 
@@ -183,11 +213,11 @@ Nach mehreren Wochen Analyse, Erinnerungen und Diskussionen mit einer sehr seri�
 
 <br>
 
-✅ Erinnerungsfaktor deutlich über dem Durchschnitt
+✅ Hohe Wahrscheinlichkeit für unvergessliche Erinnerungen
 
 <br>
 
-✅ Positive Auswirkungen auf die Stimmung des Wochenendes
+✅ Positive Auswirkungen auf die Gesamtstimmung der Veranstaltung
 
 <br>
 
@@ -196,10 +226,12 @@ Nach mehreren Wochen Analyse, Erinnerungen und Diskussionen mit einer sehr seri�
 </p>
 
 <button onclick="nextPage(4)">
-Weiter
+Untersuchung fortsetzen
 </button>
 
 </div>
+
+<!-- PAGE 4 -->
 
 <div class="page" id="page4">
 
@@ -207,7 +239,7 @@ Weiter
 
 <p>
 
-📅 Samstag, 31. Oktober
+📅 Samstag, 31. Oktober 2026
 
 <br><br>
 
@@ -215,7 +247,7 @@ Weiter
 
 <br>
 
-(oui oui... ein echtes Château)
+(Oui oui... ein echtes Château 😉)
 
 <br><br>
 
@@ -227,7 +259,7 @@ Weiter
 
 <br>
 
-🎾 Tennis
+🎾 Tennisplätze
 
 <br>
 
@@ -235,27 +267,29 @@ Weiter
 
 <br>
 
-🎃 Halloween Überraschungen
+🎃 Überraschungen
 
 <br>
 
-🎂 Ein Geburtstag mit einem Jahr Verspätung
+🎂 Ein Geburtstag mit nur einem Jahr Verspätung
 
 </p>
 
 <button onclick="nextPage(5)">
-Wer kommt?
+Bekannte Gesichter anzeigen
 </button>
 
 </div>
 
+<!-- PAGE 5 -->
+
 <div class="page" id="page5">
 
-<h2>⭐ Special Guests</h2>
+<h2>⭐ Special Guests bestätigt</h2>
 
 <p>
 
-Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten vergangener Zeiten zugesagt ...
+Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten zugesagt:
 
 <br><br>
 
@@ -267,25 +301,27 @@ Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten ve
 
 <br>
 
-⭐ Weitere Überraschungen
+⭐ Weitere Überraschungsgäste
 
 <br><br>
 
-Und vielleicht ...
+Und vielleicht...
 
 <br><br>
 
-<span class="highlight" style="font-size:1.5rem;">
+<span class="highlight" style="font-size:1.4rem;">
 ⭐ DU ⭐
 </span>
 
 </p>
 
 <button onclick="nextPage(6)">
-Eine letzte Nachricht
+Weiter
 </button>
 
 </div>
+
+<!-- PAGE 6 -->
 
 <div class="page" id="page6">
 
@@ -293,7 +329,7 @@ Eine letzte Nachricht
 
 <p>
 
-Es ist inzwischen eine ganze Weile her.
+Es ist inzwischen eine ganze Weile her, seit wir regelmäßig Kontakt hatten.
 
 <br><br>
 
@@ -309,15 +345,17 @@ Alors voilà 😊
 
 <br><br>
 
-Die Einladung ist offiziell ausgesprochen.
+Die Einladung ist hiermit offiziell ausgesprochen.
 
 </p>
 
 <button onclick="nextPage(7)">
-Noch etwas...
+Noch etwas Wichtiges
 </button>
 
 </div>
+
+<!-- PAGE 7 -->
 
 <div class="page" id="page7">
 
@@ -343,6 +381,8 @@ Finale Entscheidung
 
 </div>
 
+<!-- PAGE 8 -->
+
 <div class="page" id="page8">
 
 <h1>Mission Finale</h1>
@@ -364,12 +404,12 @@ onclick="showMessage('❤️ Perfekt! Die gesamte Familie ist offiziell eingelad
 </button>
 
 <button class="choice"
-onclick="showMessage('🤞 Ich drücke die Daumen! Das wäre großartig.')">
+onclick="showMessage('🤞 Das klingt vielversprechend. Ich freue mich darauf.')">
 🤔 Ich werde mein Bestes geben
 </button>
 
 <button class="choice"
-onclick="showMessage('😢 Schade, aber danke, dass du bis zum Ende gelesen hast.')">
+onclick="showMessage('😢 Schade. Aber danke, dass du bis zum Ende gelesen hast.')">
 😭 Leider nein
 </button>
 
@@ -379,45 +419,46 @@ onclick="showMessage('😢 Schade, aber danke, dass du bis zum Ende gelesen hast
 
 <script>
 
-const text =
+const introText =
 `Manche Gelegenheiten gibt es nur einmal im Leben.
 
 Andere kommen einfach ein Jahr später.
 
 Heute hast du zwei Möglichkeiten.`;
 
-let i=0;
+let i = 0;
 
-function typeWriter(){
-if(i<text.length){
-document.getElementById("intro").innerHTML += text.charAt(i);
-i++;
-setTimeout(typeWriter,40);
-}
+function typing(){
+
+    if(i < introText.length){
+
+        document.getElementById("intro").innerHTML += introText.charAt(i);
+
+        i++;
+
+        setTimeout(typing,40);
+    }
 }
 
-typeWriter();
+typing();
 
 function nextPage(page){
 
-document.querySelectorAll(".page").forEach(el=>{
-el.classList.remove("active");
-});
+    document.querySelectorAll(".page").forEach(p=>{
+        p.classList.remove("active");
+    });
 
-document.getElementById("page"+page).classList.add("active");
-
+    document.getElementById("page"+page).classList.add("active");
 }
 
 function wrongChoice(){
 
-alert("⚠️ Achtung!\n\nDie Experten gehen von einem hohen Risiko aus, dass du diese Entscheidung später bereuen wirst 😄");
-
+    alert("⚠️ Achtung!\n\nDie Experten gehen davon aus, dass du diese Entscheidung später bereuen könntest 😄");
 }
 
-function showMessage(msg){
+function showMessage(message){
 
-document.getElementById("result").innerHTML = msg;
-
+    document.getElementById("result").innerHTML = message;
 }
 
 </script>
