@@ -1,1 +1,340 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation Courage</title>
 
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: "Segoe UI", sans-serif;
+    background:#0c0c0c;
+    color:white;
+    overflow:hidden;
+}
+
+.page{
+    display:none;
+    height:100vh;
+    width:100%;
+    padding:40px;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.active{
+    display:flex;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:25px;
+}
+
+h2{
+    font-size:2.2rem;
+    margin-bottom:25px;
+    color:#e8c46c;
+}
+
+p{
+    max-width:800px;
+    line-height:1.8;
+    font-size:1.15rem;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    border:none;
+    border-radius:10px;
+    background:#b32727;
+    color:white;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#d33a3a;
+    transform:scale(1.05);
+}
+
+.choice{
+    display:block;
+    margin:15px auto;
+    min-width:350px;
+}
+
+.highlight{
+    color:#e8c46c;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div class="page active" id="page1">
+
+<h1>31. Oktober 2026</h1>
+
+<p>
+Manche Gelegenheiten gibt es nur einmal im Leben.
+<br><br>
+Andere kommen einfach ein Jahr später.
+<br><br>
+Heute hast du zwei Möglichkeiten.
+</p>
+
+<button onclick="nextPage(2)">
+✅ Mut beweisen
+</button>
+
+<button onclick="wrongChoice()">
+❌ Die Gelegenheit des Jahres verpassen
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<h2>🔒 VERTRAULICHE AKTE</h2>
+
+<p>
+<b>Projektname:</b>
+<br>
+Operation: William feiert endlich seinen 30. Geburtstag.
+<br><br>
+
+<b>Risikobewertung:</b>
+<br>
+Spaßfaktor: Sehr hoch
+<br>
+Gute Laune: Garantiert
+<br>
+Wahrscheinlichkeit, etwas zu verpassen:
+<span class="highlight">97,4 %</span>
+</p>
+
+<button onclick="nextPage(3)">
+➡️ Mehr erfahren
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<h2>Warum wurdest du ausgewählt?</h2>
+
+<p>
+Nach mehreren Wochen sorgfältiger Analyse und einigen nostalgischen Erinnerungen wurde festgestellt:
+<br><br>
+
+✅ Überdurchschnittliches Potenzial für gute Gespräche
+<br>
+✅ Hohe Wahrscheinlichkeit für lustige Erinnerungen
+<br>
+✅ Positive Auswirkungen auf die Atmosphäre des Wochenendes
+<br>
+✅ Anwesenheit ausdrücklich empfohlen
+</p>
+
+<button onclick="nextPage(4)">
+🔎 Untersuchung fortsetzen
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<h2>🏰 Die Mission</h2>
+
+<p>
+📅 31. Oktober 2026
+<br><br>
+
+🏰 Châteauform' Campus de Cély
+<br>
+(Oui oui... ein echtes Château 😉)
+<br><br>
+
+🍕 Pizza-Foodtruck
+<br>
+🏊 Innenpool
+<br>
+🎾 Tennisplätze
+<br>
+🍹 Apéro
+<br>
+🎃 Überraschungen
+<br>
+🎂 Ein Geburtstag mit nur einem Jahr Verspätung
+</p>
+
+<button onclick="nextPage(5)">
+⭐ Bekannte Gesichter anzeigen
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<h2>⭐ Special Guests bestätigt</h2>
+
+<p>
+Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten vergangener Zeiten zugesagt:
+<br><br>
+
+⭐ Ben
+<br>
+⭐ Tyrone
+<br>
+⭐ Weitere Überraschungsgäste
+<br><br>
+
+Und vielleicht...
+<br><br>
+
+<span class="highlight" style="font-size:1.4rem;">
+⭐ Du ⭐
+</span>
+
+</p>
+
+<button onclick="nextPage(6)">
+➡️ Letzte wichtige Information
+</button>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="page6">
+
+<h2>❤️ Jetzt mal ernsthaft</h2>
+
+<p>
+Es ist inzwischen eine ganze Weile her, seit wir regelmäßig Kontakt hatten.
+<br><br>
+
+Trotzdem musste ich bei der Planung dieses Wochenendes ziemlich schnell an dich denken.
+<br><br>
+
+Ich habe viele schöne Erinnerungen an unsere gemeinsame Zeit und dachte mir, dass diese Einladung etwas persönlicher sein darf als eine einfache WhatsApp-Nachricht.
+<br><br>
+
+Alors voilà 😊
+<br><br>
+
+Die Einladung ist hiermit offiziell ausgesprochen.
+</p>
+
+<button onclick="nextPage(7)">
+❤️ Noch etwas Wichtiges
+</button>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page" id="page7">
+
+<h2>👨‍👩‍👧‍👦 Gute Nachrichten</h2>
+
+<p>
+
+Du bist selbstverständlich nicht verpflichtet, alleine zu kommen.
+<br><br>
+
+Falls du Lust hast, darfst du sehr gerne mit deiner Familie kommen.
+<br><br>
+
+Ihr seid alle herzlich willkommen.
+❤️
+
+</p>
+
+<button onclick="nextPage(8)">
+🎯 Finale Entscheidung
+</button>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page" id="page8">
+
+<h1>Mission Finale</h1>
+
+<p>
+Nimmst du die Einladung an?
+</p>
+
+<button class="choice" onclick="showMessage('🥳 Ausgezeichnete Entscheidung! Die geschätzte Qualität des Wochenendes ist gerade um 37 % gestiegen.')">
+🥳 Ja, natürlich!
+</button>
+
+<button class="choice" onclick="showMessage('❤️ Perfekt! Die gesamte Familie ist offiziell eingeladen.')">
+❤️ Ja, und ich komme mit meiner Familie
+</button>
+
+<button class="choice" onclick="showMessage('🤞 Das klingt vielversprechend. Ich drücke die Daumen!')">
+🤔 Ich werde mein Bestes geben
+</button>
+
+<button class="choice" onclick="showMessage('😢 Schade. Aber danke, dass du die Einladung bis zum Ende gelesen hast.')">
+😭 Leider nein
+</button>
+
+<p id="result" style="margin-top:40px;color:#e8c46c;font-size:1.2rem;"></p>
+
+</div>
+
+<script>
+
+function nextPage(page){
+
+document.querySelectorAll('.page').forEach(p=>{
+p.classList.remove('active');
+});
+
+document.getElementById('page'+page).classList.add('active');
+
+}
+
+function wrongChoice(){
+
+alert("⚠️ Achtung!\n\nDie Experten gehen von einem hohen Risiko aus, dass du es später bereuen wirst. 😄");
+
+}
+
+function showMessage(message){
+
+document.getElementById("result").innerHTML = message;
+
+}
+
+</script>
+
+</body>
+</html>
