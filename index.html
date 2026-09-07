@@ -6,8 +6,7 @@
 
 <title>Operation Courage</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;500;700&display=>
-
+<style>
 *{
     margin:0;
     padding:0;
@@ -15,450 +14,274 @@
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#0d0d0d;
+    font-family:Arial, sans-serif;
+    background:#111;
     color:white;
     overflow:hidden;
 }
 
-/* Brouillard */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 20% 30%, rgba(255,140,0,.15), transparent 35%),
-    radial-gradient(circle at 75% 60%, rgba(255,0,0,.12), transparent 35%);
-    animation:fog 12s infinite alternate ease-in-out;
-    pointer-events:none;
-}
-
-@keyframes fog{
-    from{
-        transform:scale(1);
-    }
-    to{
-        transform:scale(1.15);
-    }
-}
-
 .page{
     display:none;
-    min-height:100vh;
-    width:100%;
-    padding:40px 25px;
+    height:100vh;
+    padding:40px;
+    text-align:center;
     justify-content:center;
     align-items:center;
     flex-direction:column;
-    text-align:center;
-
-    animation:fade .8s ease;
 }
 
 .page.active{
     display:flex;
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 h1{
-    font-family:'Cinzel',serif;
     font-size:3rem;
-    color:#f8d17d;
-    margin-bottom:25px;
+    color:#f5c26b;
+    margin-bottom:20px;
 }
 
 h2{
-    font-family:'Cinzel',serif;
-    font-size:2.2rem;
-    color:#f8d17d;
+    font-size:2rem;
+    color:#f5c26b;
     margin-bottom:20px;
 }
 
 p{
-    max-width:850px;
+    max-width:800px;
     line-height:1.8;
     font-size:1.1rem;
 }
 
-.highlight{
-    color:#f8d17d;
-    font-weight:bold;
-}
-
 button{
-    margin-top:15px;
+    margin:10px;
+    padding:15px 25px;
     border:none;
-    border-radius:12px;
-    padding:15px 30px;
-    font-size:1rem;
-    cursor:pointer;
-    background:#ad1d1d;
+    border-radius:8px;
+    background:#b22222;
     color:white;
-    transition:.3s;
+    cursor:pointer;
+    font-size:1rem;
 }
 
 button:hover{
-    transform:translateY(-3px);
-    background:#d63333;
+    background:#d62828;
 }
 
 .choice{
-    width:340px;
+    width:350px;
     max-width:90%;
 }
 
 #result{
-    margin-top:35px;
-    color:#f8d17d;
-    font-size:1.1rem;
-    font-weight:bold;
+    margin-top:30pxOui. D'après la capture, ton CSS est cassé et c'est pour cela que toutes les pages s'affichent les unes sous les autres.
+
+Le plus simple est de repartir sur un **fichier propre et fonctionnel**.
+
+### Fais ceci
+
+1. Ouvre `index.html`
+2. `Ctrl + A`
+3. Supprime tout
+4. Colle ce fichier minimal ci-dessous
+5. Commit changes
+6. Attends 1 minute
+7. Recharge avec `Ctrl + F5`
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Operation Courage</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
 }
 
-#intro{
-    max-width:700px;
-    white-space:pre-wrap;
-    border-right:2px solid #f8d17d;
+.page{
+    display:none;
+    min-height:100vh;
+    padding:40px;
+    box-sizing:border-box;
+}
+
+.active{
+    display:block;
+}
+
+button{
+    padding:15px 25px;
+    margin:10px;
+    cursor:pointer;
+    border:none;
+    border-radius:8px;
+    background:#b22222;
+    color:white;
+    font-size:16px;
+}
+
+button:hover{
+    background:#d63333;
+}
+
+h1,h2{
+    color:#f0c674;
 }
 
 </style>
-</head>
 
+</head>
 <body>
 
-<!-- PAGE 1 -->
+<div id="page1" class="page active">
+    <h1>31. Oktober 2026</h1>
 
-<div class="page active" id="page1">
+    <p>
+    Manche Gelegenheiten gibt es nur einmal im Leben.
+    <br><br>
+    Andere kommen einfach ein Jahr später.
+    <br><br>
+    Heute hast du zwei Möglichkeiten.
+    </p>
 
-<h1>31. Oktober 2026</h1>
+    <button onclick="showPage(2)">✅ Mut beweisen</button>
 
-<p id="intro"></p>
-
-<button onclick="nextPage(2)">
-✅ Mut beweisen
-</button>
-
-<button onclick="wrongChoice()">
-❌ Die Gelegenheit des Jahres verpassen
-</button>
-
+    <button onclick="alert('Achtung! Diese Entscheidung könnte später bereut werden 😄')">
+        ❌ Die Gelegenheit des Jahres verpassen
+    </button>
 </div>
 
-<!-- PAGE 2 -->
+<div id="page2" class="page">
+    <h2>🔒 Vertrauliche Akte</h2>
 
-<div class="page" id="page2">
+    <p>
+    Operation: William feiert endlich seinen 30. Geburtstag
+    <br><br>
+    Spaßfaktor: Sehr hoch
+    <br>
+    Risiko etwas zu verpassen: 97,4 %
+    </p>
 
-<h2>🔒 Vertrauliche Akte</h2>
-
-<p>
-
-Projektname:
-
-<br><br>
-
-<span class="highlight">
-Operation: William feiert endlich seinen 30. Geburtstag
-</span>
-
-<br><br>
-
-Spaßfaktor: Sehr hoch
-
-<br>
-
-Pizzafaktor: Exzellent
-
-<br>
-
-Gute-Laune-Potenzial: Maximum
-
-<br>
-
-Risiko, etwas zu verpassen:
-
-<span class="highlight">97,4 %</span>
-
-</p>
-
-<button onclick="nextPage(3)">
-Mehr erfahren
-</button>
-
+    <button onclick="showPage(3)">Weiter</button>
 </div>
 
-<!-- PAGE 3 -->
+<div id="page3" class="page">
+    <h2>Warum wurdest DU ausgewählt?</h2>
 
-<div class="page" id="page3">
+    <p>
+    Weil du zu den Personen gehörst, mit denen ich diesen besonderen Tag gerne verbringen würde.
+    </p>
 
-<h2>Warum wurdest DU ausgewählt?</h2>
-
-<p>
-
-Nach mehreren Wochen Analyse und einigen sehr positiven Erinnerungen wurde festgestellt:
-
-<br><br>
-
-✅ Überdurchschnittliches Potenzial für gute Gespräche
-
-<br>
-
-✅ Hohe Wahrscheinlichkeit für unvergessliche Erinnerungen
-
-<br>
-
-✅ Positive Auswirkungen auf die Gesamtstimmung der Veranstaltung
-
-<br>
-
-✅ Anwesenheit ausdrücklich empfohlen
-
-</p>
-
-<button onclick="nextPage(4)">
-Untersuchung fortsetzen
-</button>
-
+    <button onclick="showPage(4)">Weiter</button>
 </div>
 
-<!-- PAGE 4 -->
+<div id="page4" class="page">
+    <h2>🏰 Die Mission</h2>
 
-<div class="page" id="page4">
+    <p>
+    📅 31. Oktober 2026
+    <br><br>
+    🏰 Châteauform' Campus de Cély
+    <br>
+    🍕 Pizza Foodtruck
+    <br>
+    🏊 Innenpool
+    <br>
+    🎾 Tennis
+    <br>
+    🍹 Apéro
+    <br>
+    🎃 Überraschungen
+    </p>
 
-<h2>🏰 Die Mission</h2>
-
-<p>
-
-📅 Samstag, 31. Oktober 2026
-
-<br><br>
-
-🏰 Châteauform' Campus de Cély
-
-<br>
-
-(Oui oui... ein echtes Château 😉)
-
-<br><br>
-
-🍕 Pizza Foodtruck
-
-<br>
-
-🏊 Innenpool
-
-<br>
-
-🎾 Tennisplätze
-
-<br>
-
-🍹 Apéro
-
-<br>
-
-🎃 Überraschungen
-
-<br>
-
-🎂 Ein Geburtstag mit nur einem Jahr Verspätung
-
-</p>
-
-<button onclick="nextPage(5)">
-Bekannte Gesichter anzeigen
-</button>
-
+    <button onclick="showPage(5)">Weiter</button>
 </div>
 
-<!-- PAGE 5 -->
+<div id="page5" class="page">
+    <h2>⭐ Special Guests</h2>
 
-<div class="page" id="page5">
+    <p>
+    Ben
+    <br>
+    Tyrone
+    <br><br>
+    Und hoffentlich auch du 😊
+    </p>
 
-<h2>⭐ Special Guests bestätigt</h2>
-
-<p>
-
-Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten zugesagt:
-
-<br><br>
-
-⭐ Ben
-
-<br>
-
-⭐ Tyrone
-
-<br>
-
-⭐ Weitere Überraschungsgäste
-
-<br><br>
-
-Und vielleicht...
-
-<br><br>
-
-<span class="highlight" style="font-size:1.4rem;">
-⭐ DU ⭐
-</span>
-
-</p>
-
-<button onclick="nextPage(6)">
-Weiter
-</button>
-
+    <button onclick="showPage(6)">Weiter</button>
 </div>
 
-<!-- PAGE 6 -->
+<div id="page6" class="page">
+    <h2>❤️ Jetzt mal ehrlich</h2>
 
-<div class="page" id="page6">
+    <p>
+    Es ist eine Weile her.
+    <br><br>
+    Trotzdem musste ich bei der Planung ziemlich schnell an dich denken.
+    <br><br>
+    Alors voilà...
+    <br><br>
+    Diese Einladung ist offiziell. 🙂
+    </p>
 
-<h2>❤️ Jetzt mal ehrlich</h2>
-
-<p>
-
-Es ist inzwischen eine ganze Weile her, seit wir regelmäßig Kontakt hatten.
-
-<br><br>
-
-Trotzdem musste ich ziemlich schnell an dich denken, als ich angefangen habe, dieses Wochenende zu planen.
-
-<br><br>
-
-Ich habe sehr gute Erinnerungen an unsere gemeinsame Zeit und dachte mir, dass diese Einladung etwas persönlicher sein darf als eine normale WhatsApp.
-
-<br><br>
-
-Alors voilà 😊
-
-<br><br>
-
-Die Einladung ist hiermit offiziell ausgesprochen.
-
-</p>
-
-<button onclick="nextPage(7)">
-Noch etwas Wichtiges
-</button>
-
+    <button onclick="showPage(7)">Weiter</button>
 </div>
 
-<!-- PAGE 7 -->
+<div id="page7" class="page">
+    <h2>👨‍👩‍👧‍👦 Gute Nachrichten</h2>
 
-<div class="page" id="page7">
+    <p>
+    Natürlich bist du herzlich eingeladen, mit deiner Familie zu kommen.
+    </p>
 
-<h2>👨‍👩‍👧‍👦 Gute Nachrichten</h2>
-
-<p>
-
-Du musst selbstverständlich nicht alleine kommen.
-
-<br><br>
-
-Falls du möchtest, darfst du sehr gerne mit deiner Familie kommen.
-
-<br><br>
-
-Ihr seid alle herzlich willkommen ❤️
-
-</p>
-
-<button onclick="nextPage(8)">
-Finale Entscheidung
-</button>
-
+    <button onclick="showPage(8)">Finale Entscheidung</button>
 </div>
 
-<!-- PAGE 8 -->
+<div id="page8" class="page">
+    <h1>Mission Finale</h1>
 
-<div class="page" id="page8">
+    <p>Nimmst du die Einladung an?</p>
 
-<h1>Mission Finale</h1>
+    <button onclick="answer('🥳 Fantastisch!')">
+        Ja, natürlich!
+    </button>
 
-<p>
+    <button onclick="answer('❤️ Wunderbar, die ganze Familie ist willkommen!')">
+        Ja, mit Familie
+    </button>
 
-Nimmst du die Einladung an?
+    <button onclick="answer('🤞 Ich drücke die Daumen!')">
+        Ich versuche es
+    </button>
 
-</p>
+    <button onclick="answer('😢 Schade, aber danke fürs Lesen.')">
+        Leider nein
+    </button>
 
-<button class="choice"
-onclick="showMessage('🥳 Fantastische Entscheidung! Die Qualität des Wochenendes ist gerade um 37 % gestiegen.')">
-🥳 Ja, natürlich!
-</button>
-
-<button class="choice"
-onclick="showMessage('❤️ Perfekt! Die gesamte Familie ist offiziell eingeladen.')">
-❤️ Ja, mit Familie
-</button>
-
-<button class="choice"
-onclick="showMessage('🤞 Das klingt vielversprechend. Ich freue mich darauf.')">
-🤔 Ich werde mein Bestes geben
-</button>
-
-<button class="choice"
-onclick="showMessage('😢 Schade. Aber danke, dass du bis zum Ende gelesen hast.')">
-😭 Leider nein
-</button>
-
-<div id="result"></div>
-
+    <p id="result"></p>
 </div>
 
 <script>
 
-const introText =
-`Manche Gelegenheiten gibt es nur einmal im Leben.
+function showPage(number){
 
-Andere kommen einfach ein Jahr später.
-
-Heute hast du zwei Möglichkeiten.`;
-
-let i = 0;
-
-function typing(){
-
-    if(i < introText.length){
-
-        document.getElementById("intro").innerHTML += introText.charAt(i);
-
-        i++;
-
-        setTimeout(typing,40);
-    }
-}
-
-typing();
-
-function nextPage(page){
-
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
+    document.querySelectorAll('.page').forEach(page=>{
+        page.classList.remove('active');
     });
 
-    document.getElementById("page"+page).classList.add("active");
+    document.getElementById('page'+number).classList.add('active');
 }
 
-function wrongChoice(){
-
-    alert("⚠️ Achtung!\n\nDie Experten gehen davon aus, dass du diese Entscheidung später bereuen könntest 😄");
-}
-
-function showMessage(message){
-
-    document.getElementById("result").innerHTML = message;
+function answer(message){
+    document.getElementById('result').innerHTML = message;
 }
 
 </script>
