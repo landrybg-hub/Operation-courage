@@ -4,284 +4,529 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Operation Courage</title>
+<title>Agent Caro - Geheime Mission</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box;
+   *box-sizing:border-box;
 }
 
 body{
-    font-family:Arial, sans-serif;
-    background:#111;
-    color:white;
+  * font-family: "Segoe UI", sans-ser*f;
+    background: linear-gradient*135deg,#f7efe1,#fdf8f0);
+    color*#333;
     overflow:hidden;
 }
 
-.page{
+.pag*{
     display:none;
-    height:100vh;
+    height:100*h;
     padding:40px;
-    text-align:center;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+    justify-c*ntent:center;
+    align*items*center;
+    flex-direction:column;*    text-align:center;
 }
 
-.page.active{
+.page.ac*ive{
     display:flex;
 }
 
 h1{
-    font-size:3rem;
-    color:#f5c26b;
-    margin-bottom:20px;
+    *ont-size:3rem;
+    color:#7b2230;
+*   margin-bottom:20px;
 }
 
 h2{
-    font-size:2rem;
-    color:#f5c26b;
-    margin-bottom:20px;
+    *ont-size:2rem;
+    color:#7b2230;
+*   margin-bottom:20px;
 }
 
 p{
-    max-width:800px;
-    line-height:1.8;
-    font-size:1.1rem;
+    m*x-width:850px;
+    line-height:1.8*
+    font*size:*.15rem;
 }
 
 button{
+    border:none*
+    border-radius:12px;
+    paddi*g:15px 25px;
     margin:10px;
-    padding:15px 25px;
-    border:none;
-    border-radius:8px;
-    background:#b22222;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
+    *ursor:pointer;
+    font-size:1rem;*    transition:.3s;
 }
 
-button:hover{
-    background:#d62828;
+.red-pill{
+*   background:#c62828;
+    color:w*ite;
+}
+
+.blue-pill{
+    background*#1565c0;
+    color:white;
+    posi*ion**elative;
+}
+
+.red-pill:hover{
+    t*ansform:scale(1.05);
+}
+
+.next{
+   *background:#7b2230;
+    color:whit*;
+}
+
+.next:hover{
+    transform:sc*le(1.05);
 }
 
 .choice{
-    width:350px;
-    max-width:90%;
+    min-widt*:320px;
 }
 
-#result{
-    margin-top:30pxOui. D'après la capture, ton CSS est cassé et c'est pour cela que toutes les pages s'affichent les unes sous les autres.
-
-Le plus simple est de repartir sur un **fichier propre et fonctionnel**.
-
-### Fais ceci
-
-1. Ouvre `index.html`
-2. `Ctrl + A`
-3. Supprime tout
-4. Colle ce fichier minimal ci-dessous
-5. Commit changes
-6. Attends 1 minute
-7. Recharge avec `Ctrl + F5`
-
-```html
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Operation Courage</title>
-
-<style>
-
-body{
-    margin:0;
-    background:#111;
-    color:white;
-    font-family:Arial, sans-serif;
-    text-align:center;
+.highlight{
+    color*#b*860b;
+    font-weight:bold;
 }
 
-.page{
-    display:none;
-    min-height:100vh;
-    padding:40px;
-    box-sizing:border-box;
-}
-
-.active{
-    display:block;
-}
-
-button{
-    padding:15px 25px;
-    margin:10px;
-    cursor:pointer;
-    border:none;
-    border-radius:8px;
-    background:#b22222;
-    color:white;
-    font-size:16px;
-}
-
-button:hover{
-    background:#d63333;
-}
-
-h1,h2{
-    color:#f0c674;
+#re*ult{
+    margin-top:25px;
+    font*size:1.2rem;
+    color:#7b2230;
+  * font-weight:bold;
 }
 
 </style>
+</h*ad>
 
-</head>
 <body>
 
-<div id="page1" class="page active">
-    <h1>31. Oktober 2026</h1>
+<!-- PAGE 1 -->
 
-    <p>
-    Manche Gelegenheiten gibt es nur einmal im Leben.
-    <br><br>
-    Andere kommen einfach ein Jahr später.
-    <br><br>
-    Heute hast du zwei Möglichkeiten.
-    </p>
+<div*class="page active" id="page1">
 
-    <button onclick="showPage(2)">✅ Mut beweisen</button>
+<*1>🔎 Agent Caro</h1>
 
-    <button onclick="alert('Achtung! Diese Entscheidung könnte später bereut werden 😄')">
-        ❌ Die Gelegenheit des Jahres verpassen
-    </button>
+<p>
+
+Du hast*zwei Möglichkeiten.
+
+<br><br>
+
+🔴 *ie rote Pille:
+
+<br>
+
+Ein ungewöhn*iches Halloween-Abenteuer in einem*Château bei Paris erleben.
+
+<br><b*>
+
+🔵 Die blaue Pille:
+
+<br>
+
+Eine*möglicherweise legendäre Gelegenhe*t verpassen.
+
+</p>
+
+<br>
+
+<button *lass="red-pill" onclick="nextPage*2)">
+🔴 Die rote Pille
+</button*
+
+<button class="blue-pill" id="bl*ePill">
+🔵 Die blaue Pille
+</butto*>
+
 </div>
 
-<div id="page2" class="page">
-    <h2>🔒 Vertrauliche Akte</h2>
+<!-- PAGE 2 -->
 
-    <p>
-    Operation: William feiert endlich seinen 30. Geburtstag
-    <br><br>
-    Spaßfaktor: Sehr hoch
-    <br>
-    Risiko etwas zu verpassen: 97,4 %
-    </p>
+<div c*ass="page" id="page2">
 
-    <button onclick="showPage(3)">Weiter</button>
+<h2>📁 Ver*rauliche Akte</h2>
+
+<p>
+
+Projektna*e:
+
+<br>
+
+<span class="highlight">*Operation: William feiert endlich *einen 30. Geburtstag
+</span>
+
+<br>*br>
+
+Spaßpotenzial: Sehr hoch
+
+<br*
+
+Pizza-Faktor: Exzellent
+
+<br>
+
+R*siko etwas zu verpassen:
+
+<span cl*ss="highlight">97,4%</span>
+
+</p>
+*<button class="next" onclick="next*age(3)">
+Weiter
+</button>
+
+</div>
+*<!-- PAGE 3 -->
+
+<div class="page"*id="page*">
+
+<h2>🕵️ Warum wurdest DU ausge*ählt?</h2>
+
+<p>
+
+Das Ermittlungste*m vor Ort benötigt dringend eine
+
+*span class="highlight">
+Chefdetekt*vin.
+</span>
+
+<br><br>
+
+Gesuchte F*higkeiten:
+
+<br><br>
+
+✅ Französisc* verstehen
+
+<br>
+
+✅ Französisch an*enden
+
+<br>
+
+✅ Rätsel lösen
+
+<br>
+*✅ Pizza professionell konsumieren
+*<br>
+
+✅ Gute Stimmung verbreiten
+
+*br>
+
+✅ Einen Geburtstag feiern, de* genau ein Jahr zu spät stattfinde*
+
+<br><br>
+
+Nach sorgfältiger Anal*se erfüllst du alle Kriterien.
+
+</*>
+
+<button class="next" onclick="n*xtPage(4)">
+Mission ansehen
+</butt*n>
+
 </div>
 
-<div id="page3" class="page">
-    <h2>Warum wurdest DU ausgewählt?</h2>
+<!-- PAGE 4 -->
 
-    <p>
-    Weil du zu den Personen gehörst, mit denen ich diesen besonderen Tag gerne verbringen würde.
-    </p>
+<div *lass="page" id="page4">
 
-    <button onclick="showPage(4)">Weiter</button>
+<h2>🏰 Di* Mission</h2>
+
+<p>
+
+📅 31. Oktober*2026
+
+<br><br>
+
+🏰 Châteauform' Ca*pus de Cély
+
+<br>
+
+(Oui oui... ein*echtes Château 😊)
+
+<br><br>
+
+🍕 P*zza Foodtruck
+
+<br>
+
+🏊 Innenpool
+*<br>
+
+🎾 Tennis
+
+<br>
+
+🍹 Petit Ap*ro
+
+<br>
+
+🎃 Halloween Überraschun*en
+
+<br>
+
+🎂 Ein Geburtstag mit nu* einem Jahr Verspätung
+
+<br><br>
+
+*nd die einmalige Gelegenheit,
+dein*Französisch wieder anzuwenden.
+
+</*>
+
+<button class="next" onclick="n*xtPage(5)">
+Spezialgäste
+</button>*
 </div>
 
-<div id="page4" class="page">
-    <h2>🏰 Die Mission</h2>
+<!-- PAGE 5 -->
 
-    <p>
-    📅 31. Oktober 2026
-    <br><br>
-    🏰 Châteauform' Campus de Cély
-    <br>
-    🍕 Pizza Foodtruck
-    <br>
-    🏊 Innenpool
-    <br>
-    🎾 Tennis
-    <br>
-    🍹 Apéro
-    <br>
-    🎃 Überraschungen
-    </p>
+<div cla*s="page" id="page5">
 
-    <button onclick="showPage(5)">Weiter</button>
+<h2>⭐ Aus de* Archiven von CHEP...</h2>
+
+<p>
+
+M*hrere Charaktere vergangener Staff*ln wurden gesichtet.
+
+<br><br>
+
+⭐ *en
+
+<br>
+
+⭐ Tyrone
+
+<br><br>
+
+Weit*re Sichtungen werden derzeit geprü*t.
+
+<br><br>
+
+Und hoffentlich ersc*eint auch:
+
+<br><br>
+
+<span class=*highlight">
+⭐ Caro ⭐
+</span>
+
+</p>*
+<button class="next" onclick="nextPage(6)">
+Persönliche Nachricht
+</button>
+
 </div>
 
-<div id="page5" class="page">
-    <h2>⭐ Special Guests</h2>
+<!-- PAGE 6 -->
 
-    <p>
-    Ben
-    <br>
-    Tyrone
-    <br><br>
-    Und hoffentlich auch du 😊
-    </p>
+<div class="page" id="page6">
 
-    <button onclick="showPage(6)">Weiter</button>
+<h2>❤️ Eine persönliche Nachricht</h2>
+
+<p>
+
+Es ist inzwischen eine ganze Weile her.
+
+<br><br>
+
+Trotzdem warst du eine der ersten Personen,
+an die ich gedacht habe, als ich dieses Wochenende geplant habe.
+
+<br><br>
+
+Manche Menschen sieht man jeden Tag.
+
+<br>
+
+Andere deutlich seltener.
+
+<br><br>
+
+Und trotzdem würde es sich einfach richtig anfühlen,
+sie dabei zu haben.
+
+<br><br>
+
+Alors voilà 😊
+
+<br><br>
+
+Deshalb bekommst du diese etwas ungewöhnliche Einladung.
+
+</p>
+
+<button class="next" onclick="nextPage(7)">
+Noch etwas...
+</button>
+
 </div>
 
-<div id="page6" class="page">
-    <h2>❤️ Jetzt mal ehrlich</h2>
+<!-- PAGE 7 -->
 
-    <p>
-    Es ist eine Weile her.
-    <br><br>
-    Trotzdem musste ich bei der Planung ziemlich schnell an dich denken.
-    <br><br>
-    Alors voilà...
-    <br><br>
-    Diese Einladung ist offiziell. 🙂
-    </p>
+<div class="page" id="page7">
 
-    <button onclick="showPage(7)">Weiter</button>
+<h2>👨‍👩‍👧‍👦 Gute Nachrichten</h2>
+
+<p>
+
+Du bist selbstverständlich nicht verpflichtet,
+alleine zu kommen.
+
+<br><br>
+
+Falls du möchtest, darfst du sehr gerne
+mit deiner Familie kommen.
+
+<br><br>
+
+Ihr seid alle herzlich willkommen ❤️
+
+</p>
+
+<button class="next" onclick="nextPage(8)">
+Finale Entscheidung
+</button>
+
 </div>
 
-<div id="page7" class="page">
-    <h2>👨‍👩‍👧‍👦 Gute Nachrichten</h2>
+<!-- PAGE 8 -->
 
-    <p>
-    Natürlich bist du herzlich eingeladen, mit deiner Familie zu kommen.
-    </p>
+<div class="page" id="page8">
 
-    <button onclick="showPage(8)">Finale Entscheidung</button>
-</div>
+<h1>🎉 Mission Finale</h1>
 
-<div id="page8" class="page">
-    <h1>Mission Finale</h1>
+<p>
 
-    <p>Nimmst du die Einladung an?</p>
+Nimmst du die Mission an?
 
-    <button onclick="answer('🥳 Fantastisch!')">
-        Ja, natürlich!
-    </button>
+</p>
 
-    <button onclick="answer('❤️ Wunderbar, die ganze Familie ist willkommen!')">
-        Ja, mit Familie
-    </button>
+<br>
 
-    <button onclick="answer('🤞 Ich drücke die Daumen!')">
-        Ich versuche es
-    </button>
+<button class="red-pill choice" onclick="acceptMission()">
+✅ Mission annehmen
+</button>
 
-    <button onclick="answer('😢 Schade, aber danke fürs Lesen.')">
-        Leider nein
-    </button>
+<button class="next choice"
+onclick="window.open('https://wa.me/?text=Hallo%20William%2C%20ich%20habe%20noch%20einige%20Fragen%20zu%20meiner%20Mission.','_blank')">
+🤔 Ich habe noch Fragen
+</button>
 
-    <p id="result"></p>
+<div id="result"></div>
+
 </div>
 
 <script>
 
-function showPage(number){
+const GOOGLE_FORM_URL =
+"TON_LIEN_GOOGLE_FORM_ICI";
 
-    document.querySelectorAll('.page').forEach(page=>{
-        page.classList.remove('active');
-    });
+function nextPage(page){
 
-    document.getElementById('page'+number).classList.add('active');
+document.querySelectorAll(".page")
+.forEach(p=>p.classList.remove("active"));
+
+document
+.getElementById("page"+page)
+.classList.add("active");
+
 }
 
-function answer(message){
-    document.getElementById('result').innerHTML = message;
+/* bouton bleu qui s'enfuit */
+
+const blueButton=document.getElementById("bluePill");
+
+blueButton.addEventListener("mouseover",()=>{
+
+const x=Math.random()*300-150;
+const y=Math.random()*200-100;
+
+blueButton.style.transform=
+`translate(${x}px,${y}px)`;
+
+});
+
+blueButton.addEventListener("click",()=>{
+
+blueButton.style.transform=
+`translate(${Math.random()*250}px,
+${Math.random()*150}px)`;
+
+});
+
+/* confettis simples */
+
+function createConfetti(){
+
+for(let i=0;i<120;i++){
+
+let confetti=document.createElement("div");
+
+confetti.style.position="fixed";
+confetti.style.left=Math.random()*100+"vw";
+confetti.style.top="-10px";
+confetti.style.width="8px";
+confetti.style.height="8px";
+
+const colors=[
+"#ff595e",
+"#ffca3a",
+"#8ac926",
+"#1982c4",
+"#6a4c93"
+];
+
+confetti.style.background=
+colors[Math.floor(Math.random()*colors.length)];
+
+confetti.style.zIndex="9999";
+
+confetti.style.transition=
+"transform 4s linear, top 4s linear";
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+
+confetti.style.top="105vh";
+
+confetti.style.transform=
+`rotate(${Math.random()*720}deg)`;
+
+},50);
+
+setTimeout(()=>{
+confetti.remove();
+},4500);
+
+}
+
+}
+
+function acceptMission(){
+
+createConfetti();
+
+document.getElementById("result").innerHTML=
+"🥳 Hervorragende Entscheidung! Die Chefdetektivin wurde offiziell rekrutiert.";
+
+setTimeout(()=>{
+
+window.open(
+GOOGLE_FORM_URL,
+"_blank"
+);
+
+},2500);
+
 }
 
 </script>
