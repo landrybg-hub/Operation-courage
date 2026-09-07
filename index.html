@@ -1,102 +1,144 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Operation Courage</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+;
+box-sizing:border-box;
 }
 
 body{
-    font-family: "Segoe UI", sans-serif;
-    background:#0c0c0c;
-    color:white;
-    overflow:hidden;
+font-family:Poppins,sans-serif;
+background:linear-gradient(135deg,#050505,#111,#1a1a1a);
+color:white;
+overflow:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,140,0,0.15),transparent 35%),
+radial-gradient(circle at 80% 60%,rgba(255,0,0,0.12),transparent 35%);
+animation:fog 10s infinite alternate;
+pointer-events:none;
+}
+
+@keyframes fog{
+from{transform:scale(1);}
+to{transform:scale(1.15);}
 }
 
 .page{
-    display:none;
-    height:100vh;
-    width:100%;
-    padding:40px;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
+display:none;
+height:100vh;
+padding:30px;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+animation:fade 1s;
 }
 
-.active{
-    display:flex;
+.page.active{
+display:flex;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 h1{
-    font-size:3rem;
-    margin-bottom:25px;
+font-family:Cinzel,serif;
+font-size:3.2rem;
+margin-bottom:25px;
+color:#f5d48f;
 }
 
 h2{
-    font-size:2.2rem;
-    margin-bottom:25px;
-    color:#e8c46c;
+font-family:Cinzel,serif;
+font-size:2.4rem;
+margin-bottom:20px;
+color:#f5d48f;
 }
 
 p{
-    max-width:800px;
-    line-height:1.8;
-    font-size:1.15rem;
+max-width:850px;
+line-height:1.8;
+font-size:1.15rem;
 }
 
 button{
-    margin-top:20px;
-    padding:15px 30px;
-    border:none;
-    border-radius:10px;
-    background:#b32727;
-    color:white;
-    cursor:pointer;
-    font-size:1rem;
-    transition:0.3s;
+margin-top:15px;
+padding:15px 30px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:1rem;
+background:#9c1c1c;
+color:white;
+transition:0.3s;
+box-shadow:0 0 15px rgba(255,0,0,.3);
 }
 
 button:hover{
-    background:#d33a3a;
-    transform:scale(1.05);
+transform:translateY(-4px);
+background:#c62828;
+box-shadow:0 0 25px rgba(255,0,0,.6);
 }
 
 .choice{
-    display:block;
-    margin:15px auto;
-    min-width:350px;
+display:block;
+min-width:350px;
+margin:12px auto;
 }
 
 .highlight{
-    color:#e8c46c;
+color:#f5d48f;
+font-weight:bold;
+}
+
+.typewriter{
+border-right:3px solid #f5d48f;
+white-space:pre-wrap;
+overflow:hidden;
+}
+
+#result{
+margin-top:30px;
+color:#f5d48f;
+font-size:1.2rem;
+font-weight:bold;
 }
 
 </style>
+
 </head>
 
 <body>
-
-<!-- PAGE 1 -->
 
 <div class="page active" id="page1">
 
 <h1>31. Oktober 2026</h1>
 
-<p>
-Manche Gelegenheiten gibt es nur einmal im Leben.
-<br><br>
-Andere kommen einfach ein Jahr später.
-<br><br>
-Heute hast du zwei Möglichkeiten.
-</p>
+<p id="intro" class="typewriter"></p>
 
 <button onclick="nextPage(2)">
 ✅ Mut beweisen
@@ -108,154 +150,174 @@ Heute hast du zwei Möglichkeiten.
 
 </div>
 
-<!-- PAGE 2 -->
-
 <div class="page" id="page2">
 
 <h2>🔒 VERTRAULICHE AKTE</h2>
 
 <p>
-<b>Projektname:</b>
-<br>
-Operation: William feiert endlich seinen 30. Geburtstag.
+Projekt: <span class="highlight">Operation William wird endlich 30</span>
 <br><br>
-
-<b>Risikobewertung:</b>
-<br>
 Spaßfaktor: Sehr hoch
 <br>
-Gute Laune: Garantiert
+Pizzafaktor: Exzellent
 <br>
-Wahrscheinlichkeit, etwas zu verpassen:
+Risiko etwas zu verpassen:
 <span class="highlight">97,4 %</span>
 </p>
 
-<button onclick="nextPage(3)">
-➡️ Mehr erfahren
-</button>
+<button onclick="nextPage(3)">Mehr erfahren</button>
 
 </div>
-
-<!-- PAGE 3 -->
 
 <div class="page" id="page3">
 
-<h2>Warum wurdest du ausgewählt?</h2>
+<h2>Warum wurdest DU ausgewählt?</h2>
 
 <p>
-Nach mehreren Wochen sorgfältiger Analyse und einigen nostalgischen Erinnerungen wurde festgestellt:
+
+Nach mehreren Wochen Analyse, Erinnerungen und Diskussionen mit einer sehr seriösen Kommission wurde Folgendes festgestellt:
+
 <br><br>
 
 ✅ Überdurchschnittliches Potenzial für gute Gespräche
+
 <br>
-✅ Hohe Wahrscheinlichkeit für lustige Erinnerungen
+
+✅ Erinnerungsfaktor deutlich über dem Durchschnitt
+
 <br>
-✅ Positive Auswirkungen auf die Atmosphäre des Wochenendes
+
+✅ Positive Auswirkungen auf die Stimmung des Wochenendes
+
 <br>
+
 ✅ Anwesenheit ausdrücklich empfohlen
+
 </p>
 
 <button onclick="nextPage(4)">
-🔎 Untersuchung fortsetzen
+Weiter
 </button>
 
 </div>
-
-<!-- PAGE 4 -->
 
 <div class="page" id="page4">
 
 <h2>🏰 Die Mission</h2>
 
 <p>
-📅 31. Oktober 2026
+
+📅 Samstag, 31. Oktober
+
 <br><br>
 
 🏰 Châteauform' Campus de Cély
+
 <br>
-(Oui oui... ein echtes Château 😉)
+
+(oui oui... ein echtes Château)
+
 <br><br>
 
-🍕 Pizza-Foodtruck
+🍕 Pizza Foodtruck
+
 <br>
+
 🏊 Innenpool
+
 <br>
-🎾 Tennisplätze
+
+🎾 Tennis
+
 <br>
+
 🍹 Apéro
+
 <br>
-🎃 Überraschungen
+
+🎃 Halloween Überraschungen
+
 <br>
-🎂 Ein Geburtstag mit nur einem Jahr Verspätung
+
+🎂 Ein Geburtstag mit einem Jahr Verspätung
+
 </p>
 
 <button onclick="nextPage(5)">
-⭐ Bekannte Gesichter anzeigen
+Wer kommt?
 </button>
 
 </div>
 
-<!-- PAGE 5 -->
-
 <div class="page" id="page5">
 
-<h2>⭐ Special Guests bestätigt</h2>
+<h2>⭐ Special Guests</h2>
 
 <p>
-Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten vergangener Zeiten zugesagt:
+
+Nach aktuellen Informationen haben bereits mehrere bekannte Persönlichkeiten vergangener Zeiten zugesagt ...
+
 <br><br>
 
 ⭐ Ben
+
 <br>
+
 ⭐ Tyrone
+
 <br>
-⭐ Weitere Überraschungsgäste
+
+⭐ Weitere Überraschungen
+
 <br><br>
 
-Und vielleicht...
+Und vielleicht ...
+
 <br><br>
 
-<span class="highlight" style="font-size:1.4rem;">
-⭐ Du ⭐
+<span class="highlight" style="font-size:1.5rem;">
+⭐ DU ⭐
 </span>
 
 </p>
 
 <button onclick="nextPage(6)">
-➡️ Letzte wichtige Information
+Eine letzte Nachricht
 </button>
 
 </div>
-
-<!-- PAGE 6 -->
 
 <div class="page" id="page6">
 
-<h2>❤️ Jetzt mal ernsthaft</h2>
+<h2>❤️ Jetzt mal ehrlich</h2>
 
 <p>
-Es ist inzwischen eine ganze Weile her, seit wir regelmäßig Kontakt hatten.
+
+Es ist inzwischen eine ganze Weile her.
+
 <br><br>
 
-Trotzdem musste ich bei der Planung dieses Wochenendes ziemlich schnell an dich denken.
+Trotzdem musste ich ziemlich schnell an dich denken, als ich angefangen habe, dieses Wochenende zu planen.
+
 <br><br>
 
-Ich habe viele schöne Erinnerungen an unsere gemeinsame Zeit und dachte mir, dass diese Einladung etwas persönlicher sein darf als eine einfache WhatsApp-Nachricht.
+Ich habe sehr gute Erinnerungen an unsere gemeinsame Zeit und dachte mir, dass diese Einladung etwas persönlicher sein darf als eine normale WhatsApp.
+
 <br><br>
 
 Alors voilà 😊
+
 <br><br>
 
-Die Einladung ist hiermit offiziell ausgesprochen.
+Die Einladung ist offiziell ausgesprochen.
+
 </p>
 
 <button onclick="nextPage(7)">
-❤️ Noch etwas Wichtiges
+Noch etwas...
 </button>
 
 </div>
-
-<!-- PAGE 7 -->
 
 <div class="page" id="page7">
 
@@ -263,74 +325,98 @@ Die Einladung ist hiermit offiziell ausgesprochen.
 
 <p>
 
-Du bist selbstverständlich nicht verpflichtet, alleine zu kommen.
+Du musst selbstverständlich nicht alleine kommen.
+
 <br><br>
 
-Falls du Lust hast, darfst du sehr gerne mit deiner Familie kommen.
+Falls du möchtest, darfst du sehr gerne mit deiner Familie kommen.
+
 <br><br>
 
-Ihr seid alle herzlich willkommen.
-❤️
+Ihr seid alle herzlich willkommen ❤️
 
 </p>
 
 <button onclick="nextPage(8)">
-🎯 Finale Entscheidung
+Finale Entscheidung
 </button>
 
 </div>
-
-<!-- PAGE 8 -->
 
 <div class="page" id="page8">
 
 <h1>Mission Finale</h1>
 
 <p>
+
 Nimmst du die Einladung an?
+
 </p>
 
-<button class="choice" onclick="showMessage('🥳 Ausgezeichnete Entscheidung! Die geschätzte Qualität des Wochenendes ist gerade um 37 % gestiegen.')">
+<button class="choice"
+onclick="showMessage('🥳 Fantastische Entscheidung! Die Qualität des Wochenendes ist gerade um 37 % gestiegen.')">
 🥳 Ja, natürlich!
 </button>
 
-<button class="choice" onclick="showMessage('❤️ Perfekt! Die gesamte Familie ist offiziell eingeladen.')">
-❤️ Ja, und ich komme mit meiner Familie
+<button class="choice"
+onclick="showMessage('❤️ Perfekt! Die gesamte Familie ist offiziell eingeladen.')">
+❤️ Ja, mit Familie
 </button>
 
-<button class="choice" onclick="showMessage('🤞 Das klingt vielversprechend. Ich drücke die Daumen!')">
+<button class="choice"
+onclick="showMessage('🤞 Ich drücke die Daumen! Das wäre großartig.')">
 🤔 Ich werde mein Bestes geben
 </button>
 
-<button class="choice" onclick="showMessage('😢 Schade. Aber danke, dass du die Einladung bis zum Ende gelesen hast.')">
+<button class="choice"
+onclick="showMessage('😢 Schade, aber danke, dass du bis zum Ende gelesen hast.')">
 😭 Leider nein
 </button>
 
-<p id="result" style="margin-top:40px;color:#e8c46c;font-size:1.2rem;"></p>
+<div id="result"></div>
 
 </div>
 
 <script>
 
+const text =
+`Manche Gelegenheiten gibt es nur einmal im Leben.
+
+Andere kommen einfach ein Jahr später.
+
+Heute hast du zwei Möglichkeiten.`;
+
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("intro").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+
+typeWriter();
+
 function nextPage(page){
 
-document.querySelectorAll('.page').forEach(p=>{
-p.classList.remove('active');
+document.querySelectorAll(".page").forEach(el=>{
+el.classList.remove("active");
 });
 
-document.getElementById('page'+page).classList.add('active');
+document.getElementById("page"+page).classList.add("active");
 
 }
 
 function wrongChoice(){
 
-alert("⚠️ Achtung!\n\nDie Experten gehen von einem hohen Risiko aus, dass du es später bereuen wirst. 😄");
+alert("⚠️ Achtung!\n\nDie Experten gehen von einem hohen Risiko aus, dass du diese Entscheidung später bereuen wirst 😄");
 
 }
 
-function showMessage(message){
+function showMessage(msg){
 
-document.getElementById("result").innerHTML = message;
+document.getElementById("result").innerHTML = msg;
 
 }
 
