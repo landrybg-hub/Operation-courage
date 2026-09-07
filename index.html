@@ -237,53 +237,52 @@ Mission ansehen
 
 <div *lass="page" id="page4">
 
-<h2>🏰 Di* Mission</h2>
+<div class="page" id="page4">
+
+<h2>🏰 Die Mission</h2>
+
+<img
+src="cely.jpg"
+alt="Campus de Cély"
+style="
+width:80%;
+max-width:700px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.25);
+margin-bottom:25px;
+">
 
 <p>
 
-📅 31. Oktober*2026
-
-<br><br>
-
-🏰 Châteauform' Ca*pus de Cély
+📅 Samstag, 31. OktoberInnenpool
 
 <br>
-
-(Oui oui... ein*echtes Château 😊)
-
-<br><br>
-
-🍕 P*zza Foodtruck
-
-<br>
-
-🏊 Innenpool
-*<br>
 
 🎾 Tennis
 
 <br>
 
-🍹 Petit Ap*ro
+🍹 Petit Apéro
 
 <br>
 
-🎃 Halloween Überraschun*en
+🎃 Halloween Überraschungen
 
 <br>
 
-🎂 Ein Geburtstag mit nu* einem Jahr Verspätung
+🎂 Ein Geburtstag mit nur einem Jahr Verspätung
 
 <br><br>
 
-*nd die einmalige Gelegenheit,
-dein*Französisch wieder anzuwenden.
+Und die einmalige Gelegenheit,
+dein Französisch wieder anzuwenden.
 
-</*>
+</p>
 
-<button class="next" onclick="n*xtPage(5)">
+<button class="next" onclick="nextPage(5)">
 Spezialgäste
-</button>*
+</button>
+
 </div>
 
 <!-- PAGE 5 -->
@@ -521,7 +520,8 @@ document.getElementById("result").innerHTML=
 setTimeout(()=>{
 
 window.open(
-GOOGLE_FORM_URL,
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdPJusU2Cns4BkMAR8IJRB7OEBmrt4L8_nFm9eQ0kaqXwWUUQ/viewform?usp=header";
+,
 "_blank"
 );
 
