@@ -8,253 +8,242 @@
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-   *box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-  * font-family: "Segoe UI", sans-ser*f;
-    background: linear-gradient*135deg,#f7efe1,#fdf8f0);
-    color*#333;
-    overflow:hidden;
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#f7efe1,#fffdf8);
+    color: #333;
 }
 
-.pag*{
-    display:none;
-    height:100*h;
-    padding:40px;
-    justify-c*ntent:center;
-    align*items*center;
-    flex-direction:column;*    text-align:center;
+.page {
+    display: none;
+    min-height: 100vh;
+    padding: 40px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.page.ac*ive{
-    display:flex;
+.page.active {
+    display: flex;
 }
 
-h1{
-    *ont-size:3rem;
-    color:#7b2230;
-*   margin-bottom:20px;
+h1 {
+    color: #7b2230;
+    font-size: 3rem;
+    margin-bottom: 20px;
 }
 
-h2{
-    *ont-size:2rem;
-    color:#7b2230;
-*   margin-bottom:20px;
+h2 {
+    color: #7b2230;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-p{
-    m*x-width:850px;
-    line-height:1.8*
-    font*size:*.15rem;
+p {
+    max-width: 800px;
+    line-height: 1.8;
+    margin-bottom: 20px;
 }
 
-button{
-    border:none*
-    border-radius:12px;
-    paddi*g:15px 25px;
-    margin:10px;
-    *ursor:pointer;
-    font-size:1rem;*    transition:.3s;
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
 }
 
-.red-pill{
-*   background:#c62828;
-    color:w*ite;
+.red {
+    background: #d32f2f;
+    color: white;
 }
 
-.blue-pill{
-    background*#1565c0;
-    color:white;
-    posi*ion**elative;
+.blue {
+    background: #1976d2;
+    color: white;
+    position: relative;
 }
 
-.red-pill:hover{
-    t*ansform:scale(1.05);
+.next {
+    background: #7b2230;
+    color: white;
 }
 
-.next{
-   *background:#7b2230;
-    color:whit*;
+.highlight {
+    color: #b8860b;
+    font-weight: bold;
 }
 
-.next:hover{
-    transform:sc*le(1.05);
+.photo {
+    width: 80%;
+    max-width: 700px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
 }
 
-.choice{
-    min-widt*:320px;
-}
-
-.highlight{
-    color*#b*860b;
-    font-weight:bold;
-}
-
-#re*ult{
-    margin-top:25px;
-    font*size:1.2rem;
-    color:#7b2230;
-  * font-weight:bold;
+#result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #7b2230;
+    font-weight: bold;
 }
 
 </style>
-</h*ad>
+</head>
 
 <body>
 
 <!-- PAGE 1 -->
 
-<div*class="page active" id="page1">
+<div class="page active" id="page1">
 
-<*1>🔎 Agent Caro</h1>
+<h1>🔎 Agent Caro</h1>
 
 <p>
 
-Du hast*zwei Möglichkeiten.
+Du hast zwei Möglichkeiten.
 
 <br><br>
 
-🔴 *ie rote Pille:
+🔴 Die rote Pille:
 
 <br>
+Ein Halloween-Abenteuer in einem Château bei Paris erleben.
 
-Ein ungewöhn*iches Halloween-Abenteuer in einem*Château bei Paris erleben.
-
-<br><b*>
+<br><br>
 
 🔵 Die blaue Pille:
 
 <br>
-
-Eine*möglicherweise legendäre Gelegenhe*t verpassen.
+Eine möglicherweise legendäre Gelegenheit verpassen.
 
 </p>
 
-<br>
-
-<button *lass="red-pill" onclick="nextPage*2)">
+<button class="red" onclick="showPage(2)">
 🔴 Die rote Pille
-</button*
+</button>
 
-<button class="blue-pill" id="bl*ePill">
+<button class="blue" id="blueButton">
 🔵 Die blaue Pille
-</butto*>
+</button>
 
 </div>
 
 <!-- PAGE 2 -->
 
-<div c*ass="page" id="page2">
+<div class="page" id="page2">
 
-<h2>📁 Ver*rauliche Akte</h2>
+<h2>📁 Vertrauliche Akte</h2>
 
 <p>
 
-Projektna*e:
-
-<br>
-
-<span class="highlight">*Operation: William feiert endlich *einen 30. Geburtstag
+<span class="highlight">
+Operation: William feiert endlich seinen 30. Geburtstag
 </span>
 
-<br>*br>
+<br><br>
 
 Spaßpotenzial: Sehr hoch
 
-<br*
-
-Pizza-Faktor: Exzellent
-
 <br>
 
-R*siko etwas zu verpassen:
-
-<span cl*ss="highlight">97,4%</span>
+Risiko etwas zu verpassen: 97,4 %
 
 </p>
-*<button class="next" onclick="next*age(3)">
+
+<button class="next" onclick="showPage(3)">
 Weiter
 </button>
 
 </div>
-*<!-- PAGE 3 -->
 
-<div class="page"*id="page*">
+<!-- PAGE 3 -->
 
-<h2>🕵️ Warum wurdest DU ausge*ählt?</h2>
+<div class="page" id="page3">
+
+<h2>🕵️ Warum wurdest DU ausgewählt?</h2>
 
 <p>
 
-Das Ermittlungste*m vor Ort benötigt dringend eine
-
-*span class="highlight">
-Chefdetekt*vin.
-</span>
+Das Ermittlungsteam vor Ort benötigt dringend eine
+<span class="highlight">Chefdetektivin</span>.
 
 <br><br>
 
-Gesuchte F*higkeiten:
+Gesuchte Fähigkeiten:
 
 <br><br>
 
-✅ Französisc* verstehen
+✅ Französisch verstehen
 
 <br>
 
-✅ Französisch an*enden
+✅ Französisch anwenden
 
 <br>
 
 ✅ Rätsel lösen
 
 <br>
-*✅ Pizza professionell konsumieren
-*<br>
 
-✅ Gute Stimmung verbreiten
+✅ Pizza professionell essen
 
-*br>
+<br>
 
-✅ Einen Geburtstag feiern, de* genau ein Jahr zu spät stattfinde*
+✅ Gute Laune verbreiten
+
+<br>
+
+✅ Einen Geburtstag feiern, der ein Jahr zu spät stattfindet
 
 <br><br>
 
-Nach sorgfältiger Anal*se erfüllst du alle Kriterien.
+Nach sorgfältiger Analyse erfüllst du alle Kriterien.
 
-</*>
+</p>
 
-<button class="next" onclick="n*xtPage(4)">
+<button class="next" onclick="showPage(4)">
 Mission ansehen
-</butt*n>
+</button>
 
 </div>
 
 <!-- PAGE 4 -->
 
-<div *lass="page" id="page4">
-
 <div class="page" id="page4">
 
 <h2>🏰 Die Mission</h2>
 
-<img
-src="cely.jpg"
-alt="Campus de Cély"
-style="
-width:80%;
-max-width:700px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-margin-bottom:25px;
-">
+<img src="cely.jpg" alt="Campus de Cély" class="photo">
 
 <p>
 
-📅 Samstag, 31. OktoberInnenpool
+📅 Samstag, 31. Oktober
+
+<br><br>
+
+🏰 Châteauform' Campus de Cély
+
+<br>
+
+(Oui oui... ein echtes Château 😊)
+
+<br><br>
+
+🍕 Pizza Foodtruck
+
+<br>
+
+🏊 Innenpool
 
 <br>
 
@@ -270,16 +259,16 @@ margin-bottom:25px;
 
 <br>
 
-🎂 Ein Geburtstag mit nur einem Jahr Verspätung
+🎂 Ein Geburtstag mit einem Jahr Verspätung
 
 <br><br>
 
-Und die einmalige Gelegenheit,
+Und die perfekte Gelegenheit,
 dein Französisch wieder anzuwenden.
 
 </p>
 
-<button class="next" onclick="nextPage(5)">
+<button class="next" onclick="showPage(5)">
 Spezialgäste
 </button>
 
@@ -287,17 +276,17 @@ Spezialgäste
 
 <!-- PAGE 5 -->
 
-<div cla*s="page" id="page5">
+<div class="page" id="page5">
 
-<h2>⭐ Aus de* Archiven von CHEP...</h2>
+<h2>⭐ Aus den Archiven von CHEP...</h2>
 
 <p>
 
-M*hrere Charaktere vergangener Staff*ln wurden gesichtet.
+Mehrere Charaktere vergangener Staffeln wurden gesichtet.
 
 <br><br>
 
-⭐ *en
+⭐ Ben
 
 <br>
 
@@ -305,20 +294,21 @@ M*hrere Charaktere vergangener Staff*ln wurden gesichtet.
 
 <br><br>
 
-Weit*re Sichtungen werden derzeit geprü*t.
+Weitere Sichtungen werden momentan überprüft.
 
 <br><br>
 
-Und hoffentlich ersc*eint auch:
+Und hoffentlich erscheint auch:
 
 <br><br>
 
-<span class=*highlight">
+<span class="highlight">
 ⭐ Caro ⭐
 </span>
 
-</p>*
-<button class="next" onclick="nextPage(6)">
+</p>
+
+<button class="next" onclick="showPage(6)">
 Persönliche Nachricht
 </button>
 
@@ -343,8 +333,6 @@ an die ich gedacht habe, als ich dieses Wochenende geplant habe.
 
 Manche Menschen sieht man jeden Tag.
 
-<br>
-
 Andere deutlich seltener.
 
 <br><br>
@@ -362,7 +350,7 @@ Deshalb bekommst du diese etwas ungewöhnliche Einladung.
 
 </p>
 
-<button class="next" onclick="nextPage(7)">
+<button class="next" onclick="showPage(7)">
 Noch etwas...
 </button>
 
@@ -376,13 +364,7 @@ Noch etwas...
 
 <p>
 
-Du bist selbstverständlich nicht verpflichtet,
-alleine zu kommen.
-
-<br><br>
-
-Falls du möchtest, darfst du sehr gerne
-mit deiner Familie kommen.
+Du darfst selbstverständlich mit deiner Familie kommen.
 
 <br><br>
 
@@ -390,7 +372,7 @@ Ihr seid alle herzlich willkommen ❤️
 
 </p>
 
-<button class="next" onclick="nextPage(8)">
+<button class="next" onclick="showPage(8)">
 Finale Entscheidung
 </button>
 
@@ -408,15 +390,8 @@ Nimmst du die Mission an?
 
 </p>
 
-<br>
-
-<button class="red-pill choice" onclick="acceptMission()">
+<button class="red" onclick="acceptMission()">
 ✅ Mission annehmen
-</button>
-
-<button class="next choice"
-onclick="window.open('https://wa.me/?text=Hallo%20William%2C%20ich%20habe%20noch%20einige%20Fragen%20zu%20meiner%20Mission.','_blank')">
-🤔 Ich habe noch Fragen
 </button>
 
 <div id="result"></div>
@@ -425,108 +400,92 @@ onclick="window.open('https://wa.me/?text=Hallo%20William%2C%20ich%20habe%20noch
 
 <script>
 
-const GOOGLE_FORM_URL =
-"TON_LIEN_GOOGLE_FORM_ICI";
+const GOOGLE_FORM_URL = "TON_LIEN_GOOGLE_FORM";
 
-function nextPage(page){
+function showPage(page){
 
-document.querySelectorAll(".page")
-.forEach(p=>p.classList.remove("active"));
+    document.querySelectorAll(".page").forEach(function(el){
+        el.classList.remove("active");
+    });
 
-document
-.getElementById("page"+page)
-.classList.add("active");
+    document.getElementById("page"+page).classList.add("active");
 
 }
 
-/* bouton bleu qui s'enfuit */
+const blueButton = document.getElementById("blueButton");
 
-const blueButton=document.getElementById("bluePill");
+blueButton.addEventListener("mouseenter", function(){
 
-blueButton.addEventListener("mouseover",()=>{
+    const x = Math.random()*300 - 150;
+    const y = Math.random()*200 - 100;
 
-const x=Math.random()*300-150;
-const y=Math.random()*200-100;
-
-blueButton.style.transform=
-`translate(${x}px,${y}px)`;
-
+    blueButton.style.transform =
+        "translate("+x+"px,"+y+"px)";
 });
 
-blueButton.addEventListener("click",()=>{
+blueButton.addEventListener("click", function(){
 
-blueButton.style.transform=
-`translate(${Math.random()*250}px,
-${Math.random()*150}px)`;
-
+    blueButton.style.transform =
+        "translate("+(Math.random()*250)+"px,"+(Math.random()*150)+"px)";
 });
 
-/* confettis simples */
+function confetti(){
 
-function createConfetti(){
+    for(let i=0;i<100;i++){
 
-for(let i=0;i<120;i++){
+        let c = document.createElement("div");
 
-let confetti=document.createElement("div");
+        c.style.position="fixed";
+        c.style.left=Math.random()*100+"vw";
+        c.style.top="-10px";
+        c.style.width="8px";
+        c.style.height="8px";
 
-confetti.style.position="fixed";
-confetti.style.left=Math.random()*100+"vw";
-confetti.style.top="-10px";
-confetti.style.width="8px";
-confetti.style.height="8px";
+        const colors=[
+            "#ff595e",
+            "#ffca3a",
+            "#8ac926",
+            "#1982c4",
+            "#6a4c93"
+        ];
 
-const colors=[
-"#ff595e",
-"#ffca3a",
-"#8ac926",
-"#1982c4",
-"#6a4c93"
-];
+        c.style.background=
+            colors[Math.floor(Math.random()*colors.length)];
 
-confetti.style.background=
-colors[Math.floor(Math.random()*colors.length)];
+        c.style.zIndex=9999;
+        c.style.transition="4s linear";
 
-confetti.style.zIndex="9999";
+        document.body.appendChild(c);
 
-confetti.style.transition=
-"transform 4s linear, top 4s linear";
+        setTimeout(function(){
 
-document.body.appendChild(confetti);
+            c.style.transform=
+                "translateY(110vh) rotate(720deg)";
 
-setTimeout(()=>{
+        },50);
 
-confetti.style.top="105vh";
+        setTimeout(function(){
+            c.remove();
+        },4000);
 
-confetti.style.transform=
-`rotate(${Math.random()*720}deg)`;
-
-},50);
-
-setTimeout(()=>{
-confetti.remove();
-},4500);
-
-}
-
+    }
 }
 
 function acceptMission(){
 
-createConfetti();
+    confetti();
 
-document.getElementById("result").innerHTML=
-"🥳 Hervorragende Entscheidung! Die Chefdetektivin wurde offiziell rekrutiert.";
+    document.getElementById("result").innerHTML =
+        "🥳 Hervorragende Entscheidung! Die Chefdetektivin wurde offiziell rekrutiert.";
 
-setTimeout(()=>{
+    setTimeout(function(){
 
-window.open(
-const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdPJusU2Cns4BkMAR8IJRB7OEBmrt4L8_nFm9eQ0kaqXwWUUQ/viewform?usp=header";
-,
-"_blank"
-);
+        window.open(
+            GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdPJusU2Cns4BkMAR8IJRB7OEBmrt4L8_nFm9eQ0kaqXwWUUQ/viewform?usp=header",
+            "_blank"
+        );
 
-},2500);
-
+    },2000);
 }
 
 </script>
